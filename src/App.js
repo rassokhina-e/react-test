@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+import UsersList from './components/users';
 import './App.css';
 
 function App() {
+  const [users, setUsers] = useState([]);
+  const [errMesage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    async function getUsers() {
+      const response = await fetch('https://jsonplaceholder.typicode.com/users');
+      if (!response) setErrorMessage('Error getting users.') 
+      const result = await response.json();
+      setUsers(result)
+    }
+    getUsers()
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Users list</h1>
+      {errMesage ? (
+        <div>{errMesage}</div>
+      ) : (
+        <UsersList usersArr={users} />
+      )}
+    </>
   );
 }
 
