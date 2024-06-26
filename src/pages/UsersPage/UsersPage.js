@@ -1,8 +1,7 @@
 import React from 'react';
-import { Spinner } from '../components/index';
+import { Spinner } from '../../components/index';
 
-const UsersList = ({ users, errMesage, isLoading }) => {
-  console.log('\n\n users', users, isLoading)
+const UsersPage = ({ users, errMesage, isLoading }) => {
   const usersList = users ? users.map(user =>
     <li key={ user.id }>
       <div>Name: { user.name }</div>
@@ -25,4 +24,4 @@ const UsersList = ({ users, errMesage, isLoading }) => {
   );
 }
 
-export default React.memo(UsersList)
+export default React.memo(UsersPage)

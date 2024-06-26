@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../styles/landing.module.css'
+import styles from './styles.module.less'
 
-const Landing = () => {
+const LandingComponent = () => {
   return (
     <>
       <main className={styles.wrapper}>
@@ -22,4 +22,4 @@ const Landing = () => {
   );
 }
 
-export default React.memo(Landing)
+export default React.memo(LandingComponent)

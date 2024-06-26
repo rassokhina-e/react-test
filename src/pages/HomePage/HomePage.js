@@ -1,11 +1,11 @@
 import React from 'react';
-import { Header, Footer, Landing } from '../components/index'
+import { Header, Footer, LandingComponent } from './components/index'
 
 const HomePage = () => {
   return (
     <>
       <Header />
-      <Landing />
+      <LandingComponent />
       <Footer />
     </>
   );
