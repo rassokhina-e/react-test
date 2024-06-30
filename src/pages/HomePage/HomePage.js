@@ -1,14 +1,15 @@
 import React from 'react';
-import { Header, Footer, LandingComponent } from './components/index'
+import { Footer, LandingComponent } from './components/index'
+import { Header } from '../../components/index'
 
-const HomePage = () => {
+const HomePage = (props) => {
   return (
-    <>
+    <div onClick={props.onClick}>
       <Header />
       <LandingComponent />
       <Footer />
-    </>
+    </div>
   );
 }
 
-export default HomePage;
+export default React.memo(HomePage);

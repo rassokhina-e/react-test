@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import UserApi from './api/users';
 import { HomePage } from './pages/HomePage/index';
 import { UsersPage } from './pages/UsersPage/index';
-import './App.less';
+import './App.css';
 
 function App() {
   const [isLoading, setLoader] = useState(false);
@@ -12,6 +13,16 @@ function App() {
   React.useEffect(() => {
     fetchUsers();
   }, []);
+
+  const filteredUsers = React.useMemo(() => {
+    return users.filter((user) => user.id > 1)
+  }, [users])
+
+  React.useCallback(() => onClick, [])
+
+  const onClick = () => {
+    console.log('clicked')
+  }
 
   const fetchUsers = async () => {
     setLoader(true)
@@ -28,10 +39,14 @@ function App() {
   }
 
   return (
-    <>
-      <HomePage />
-      <UsersPage users={users} error={errMesage} isLoading={isLoading} />
-    </>
+    <BrowserRouter>
+        <div>
+            <Routes>
+                <Route path="/" element={<HomePage onClick={onClick} />} />
+                <Route path="/users" element={<UsersPage users={filteredUsers} error={errMesage} isLoading={isLoading} />} />
+            </Routes>
+        </div>
+    </BrowserRouter>
   );
 }
 

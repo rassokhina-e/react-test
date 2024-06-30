@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner } from '../../components/index';
+import { Header, Spinner } from '../../components/index';
 
 const UsersPage = ({ users, errMesage, isLoading }) => {
   const usersList = users ? users.map(user =>
@@ -12,14 +12,15 @@ const UsersPage = ({ users, errMesage, isLoading }) => {
   ) : []
   return (
     <>
-      {errMesage
-        ? <div>{ errMesage }</div>
-        : isLoading
-        ? <Spinner />
-        : usersList.length
-        ? <ul>{ usersList }</ul>
-        : <h3>No users available.</h3>
-      }
+        <Header />
+        {errMesage
+            ? <div>{ errMesage }</div>
+            : isLoading
+            ? <Spinner />
+            : usersList.length
+            ? <ul>{ usersList }</ul>
+            : <h3>No users available.</h3>
+        }
     </>
   );
 }

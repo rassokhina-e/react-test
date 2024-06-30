@@ -3,12 +3,12 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: @echo;
+  background-color: #14130D;
   padding-left: 5rem;
   padding-right: 5rem;
   padding-top: .75rem;
   padding-bottom: .75rem;
-  border-bottom: 1px solid @frequency;
+  border-bottom: 1px solid #ADFF2C;
 }
 
 .navLinks {
@@ -17,7 +17,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 3rem;
-  color: @insight;
+  color: #FFFEFC;
 }
 
 .navLogo {
@@ -28,24 +28,34 @@
   cursor: pointer;
   font-weight: 500;
   list-style: none;
+  color: #FFFEFC;
+  text-decoration: none;
 }
+
+.navLink:hover {
+  color: #ADFF2C;
+}
+
+.navLink.active {
+    color: #ADFF2C;
+  }
 
 .navLogin {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  color: @insight;
+  color: #FFFEFC;
 }
 
 .navBtn {
-  background-color: @frequency;
-  border-color: @frequency;
+  background-color: #ADFF2C;
+  border-color: #ADFF2C;
   border-radius: 9999px;
   font-family: ABCFavoritExtended;
   font-size: 1rem;
   line-height: 1.5rem;
   padding: .3rem 1rem;
   text-align: center;
-  color: @pitch;
+  color: #060508;
   cursor: pointer;
 }

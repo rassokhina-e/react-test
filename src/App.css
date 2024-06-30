@@ -1,5 +1,3 @@
-@import './css/styles';
-
 @font-face {
   font-family: 'ABCFavoritExtended';
   font-display: auto;
@@ -19,6 +17,6 @@
 }
 
 body {
-  background-color: @echo;
-  color: @insight;
+  background-color: #14130D;
+  color: #FFFEFC;
 }
