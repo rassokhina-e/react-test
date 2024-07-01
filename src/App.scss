@@ -1,3 +1,5 @@
+@import '../src/css/colors.scss';
+
 @font-face {
   font-family: 'ABCFavoritExtended';
   font-display: auto;
@@ -17,6 +19,6 @@
 }
 
 body {
-  background-color: #14130D;
-  color: #FFFEFC;
+  background-color: $echo;
+  color: $insight;
 }

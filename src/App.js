@@ -3,7 +3,8 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import UserApi from './api/users';
 import { HomePage } from './pages/HomePage/index';
 import { UsersPage } from './pages/UsersPage/index';
-import './App.css';
+import './App.scss';
+import { Layout } from './components/Layout/index';
 
 function App() {
   const [isLoading, setLoader] = useState(false);
@@ -40,12 +41,12 @@ function App() {
 
   return (
     <BrowserRouter>
-        <div>
+        <Layout>
             <Routes>
                 <Route path="/" element={<HomePage onClick={onClick} />} />
                 <Route path="/users" element={<UsersPage users={filteredUsers} error={errMesage} isLoading={isLoading} />} />
             </Routes>
-        </div>
+        </Layout>
     </BrowserRouter>
   );
 }

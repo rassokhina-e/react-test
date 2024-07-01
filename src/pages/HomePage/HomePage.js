@@ -1,13 +1,10 @@
 import React from 'react';
-import { Footer, LandingComponent } from './components/index'
-import { Header } from '../../components/index'
+import { LandingComponent } from './components/LandingComponent/index'
 
 const HomePage = (props) => {
   return (
     <div onClick={props.onClick}>
-      <Header />
       <LandingComponent />
-      <Footer />
     </div>
   );
 }

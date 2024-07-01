@@ -1,14 +1,14 @@
-@import '../../../../css/colors.less';
+@import '../../../../css/colors.scss';
 
 .wrapper {
-  background-color: @echo;
+  background-color: $echo;
   padding-left: 5rem;
   padding-right: 5rem;
   padding-top: 1.75rem;
   padding-bottom: .1rem;
   font-size: 1rem;
   line-height: 1.5rem;
-  color: @insight;
+  color: $insight;
   min-height: 65vh;
 }
 
@@ -17,13 +17,13 @@ h1 {
   font-weight: 400;
   font-size: 2rem;
   line-height: 3rem;
-  color: @frequency;
+  color: $frequency;
 }
 
 .mainContent {
   display: flex;
   flex-direction: row;
-  background-color: @echo;
+  background-color: $echo;
   padding-left: 5rem;
   padding-right: 5rem;
   padding-top: .75rem;
@@ -59,14 +59,14 @@ h1 {
 }
 
 .mainBtn {
-  background-color: @frequency;
-  border-color: @frequency;
+  background-color: $frequency;
+  border-color: $frequency;
   border-radius: 9999px;
   font-family: ABCFavoritExtended;
   font-size: 1rem;
   line-height: 1.5rem;
   padding: .3rem 1rem;
   text-align: center;
-  color: @pitch;
+  color: $pitch;
   cursor: pointer;
 }

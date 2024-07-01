@@ -1,3 +1,5 @@
+@import '../../css/colors.scss';
+
 .nav {
   display: flex;
   flex-direction: row;
@@ -8,7 +10,7 @@
   padding-right: 5rem;
   padding-top: .75rem;
   padding-bottom: .75rem;
-  border-bottom: 1px solid #ADFF2C;
+  border-bottom: 1px solid $frequency;
 }
 
 .navLinks {
@@ -17,7 +19,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 3rem;
-  color: #FFFEFC;
+  color: $insight;
 }
 
 .navLogo {
@@ -28,34 +30,34 @@
   cursor: pointer;
   font-weight: 500;
   list-style: none;
-  color: #FFFEFC;
+  color: $insight;
   text-decoration: none;
 }
 
 .navLink:hover {
-  color: #ADFF2C;
+  color: $frequency;
 }
 
 .navLink.active {
-    color: #ADFF2C;
+    color: $frequency;
   }
 
 .navLogin {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  color: #FFFEFC;
+  color: $insight;
 }
 
 .navBtn {
-  background-color: #ADFF2C;
-  border-color: #ADFF2C;
+  background-color: $frequency;
+  border-color: $frequency;
   border-radius: 9999px;
   font-family: ABCFavoritExtended;
   font-size: 1rem;
   line-height: 1.5rem;
   padding: .3rem 1rem;
   text-align: center;
-  color: #060508;
+  color: $pitch;
   cursor: pointer;
 }
