@@ -1,0 +1,63 @@
+@import '../../../../css/colors.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid;
+  border-color: $util-gray-03;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+.username {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  color: $insight;
+  font-weight: 700;
+  letter-spacing: -.025em;
+  line-height: 24px;
+}
+
+.email {
+  white-space: nowrap;
+  color: $fog;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.websiteBtn {
+  background-color: transparent;
+  border: 1px solid;
+  border-color: $frequency;
+  border-radius: 9999px;
+  font-family: ABCFavoritExtended;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: .3rem 1rem;
+  text-align: center;
+  color: $frequency;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.ml2 {
+  margin-left: 4px;
+}
