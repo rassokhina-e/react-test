@@ -3,7 +3,6 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
 }
 
 .row {
@@ -11,9 +10,10 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid;
-  border-color: $util-gray-03;
+
+  &:hover {
+    background-color: $util-gray-03;
+  }
 }
 
 .column {
@@ -56,8 +56,30 @@
   color: $frequency;
   cursor: pointer;
   text-decoration: none;
+
+  &:hover {
+    background-color: $util-gray-03;
+  }
 }
 
 .ml2 {
   margin-left: 4px;
+}
+
+.py2 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.bgGray {
+  background-color: $util-gray-03;
+}
+
+.borderGray {
+  border-color: $util-gray-03;
+  border-bottom: 1px solid;
+}
+
+.selected {
+  background-color: $util-gray-02;
 }

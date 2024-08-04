@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './styles.module.scss';
 
 const Spinner = () => {
   return (
-    <>
+    <div className={styles.wrapper}>
         <svg xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             // class="block bg-none mx-auto"
@@ -14,7 +15,7 @@ const Spinner = () => {
                 <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"/>
             </circle>
         </svg>
-    </>
+    </div>
   );
 }
 
