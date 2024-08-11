@@ -1,5 +1,1 @@
-import UsersPage from './UsersPage'
-
-export {
-  UsersPage
-};
+export { default } from './UsersPage'
