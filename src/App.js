@@ -1,10 +1,12 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
+
 import { HomePage } from './pages/HomePage';
 import { UsersPage } from './pages/UsersPage';
-import './App.scss';
 import { Layout } from './components/Layout/index';
 import { Spinner } from './components/Spinner';
+
+import './App.scss';
 
 // const HomePage = React.lazy(() => import('./pages/HomePage'));
 // const UsersPage = React.lazy(() => import('./pages/UsersPage/index'));
