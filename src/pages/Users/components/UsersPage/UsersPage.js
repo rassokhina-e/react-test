@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { useFetchUsers } from '../../hooks/useFetchUsers'
-import { Spinner } from '../../components/Spinner';
+import { useFetchUsers } from '../../../../hooks/useFetchUsers'
+import { Spinner } from '../../../../components/Spinner';
 
 import styles from './styles.module.scss';
 

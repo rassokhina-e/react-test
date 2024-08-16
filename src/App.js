@@ -7,7 +7,7 @@ import { Spinner } from './components/Spinner';
 import './App.scss';
 
 const HomePage = React.lazy(() => import('./pages/HomePage'));
-const UsersPage = React.lazy(() => import('./pages/UsersPage'));
+const Users = React.lazy(() => import('./pages/Users'));
 
 function App() {
   React.useCallback(() => onClick, [])
@@ -22,12 +22,7 @@ function App() {
             <React.Suspense fallback={<Spinner />}>
                 <Routes>
                     <Route path="/" element={<HomePage onClick={onClick} />} />
-                    <Route
-                        path="/users"
-                        element={<UsersPage />}
-                    />
-                    {/* <Route path={["/users", "/users/:userId"]} element={<UsersPage />} /> */}
-                    {/* <Route path="/users/:userId" element={<div>personal user page</div>} /> */}
+                    <Route path="/users/*" element={<Users />}/>
                 </Routes>
             </React.Suspense>
         </Layout>
