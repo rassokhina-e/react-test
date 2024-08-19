@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import { Layout } from './components/Layout';
 import { Spinner } from './components/Spinner';
+import { ErrorBoundary } from './components/ErrorBoundary'
 
 import './App.scss';
 
@@ -18,14 +19,16 @@ function App() {
 
   return (
     <BrowserRouter>
-        <Layout>
-            <React.Suspense fallback={<Spinner />}>
-                <Routes>
-                    <Route path="/" element={<HomePage onClick={onClick} />} />
-                    <Route path="/users/*" element={<Users />}/>
-                </Routes>
-            </React.Suspense>
-        </Layout>
+        <ErrorBoundary>
+            <Layout>
+                <React.Suspense fallback={<Spinner />}>
+                    <Routes>
+                        <Route path="/" element={<HomePage onClick={onClick} />} />
+                        <Route path="/users/*" element={<Users />}/>
+                    </Routes>
+                </React.Suspense>
+            </Layout>
+        </ErrorBoundary>
     </BrowserRouter>
   );
 }

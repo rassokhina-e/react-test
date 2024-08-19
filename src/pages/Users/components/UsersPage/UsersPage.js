@@ -6,7 +6,7 @@ import { Spinner } from '../../../../components/Spinner';
 
 import styles from './styles.module.scss';
 
-const Users = () => {
+const UsersPage = () => {
   const [submissionInProgress, setSubmissionInProgress] = React.useState(false);
   const text = submissionInProgress ? 'Processing': "Go to member's website";
 
@@ -35,6 +35,8 @@ const Users = () => {
     return <div>No users</div>
   }
 
+  const data = null.map(() => {})
+
   return (
     <div className={styles.wrapper}>
       {errMesage && <div>{ errMesage }</div>}
@@ -61,4 +63,4 @@ const Users = () => {
   );
 }
 
-export default React.memo(Users)
+export default React.memo(UsersPage)
