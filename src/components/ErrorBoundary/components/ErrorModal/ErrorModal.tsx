@@ -2,7 +2,11 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-const ErrorModal = (props) => {
+type Props = {
+    onClick: () => void;
+}
+
+const ErrorModal: React.FC<Props> = (props) => {
   return (
     <div className={styles.modalBackground}>
         <div className={styles.modalWrapper}>
