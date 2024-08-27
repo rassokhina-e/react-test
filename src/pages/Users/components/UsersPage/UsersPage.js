@@ -31,11 +31,9 @@ const UsersPage = () => {
     }
   }
 
-  if (!users.length) {
+  if (!users.length && !isLoading) {
     return <div>No users</div>
   }
-
-  const data = null.map(() => {})
 
   return (
     <div className={styles.wrapper}>

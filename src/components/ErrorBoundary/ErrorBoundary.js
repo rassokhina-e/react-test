@@ -16,7 +16,7 @@ class ErrorBoundary extends React.Component {
     componentDidCatch(error, info) {
     }
 
-    handleRedirection = () => {
+    handleRedirect = () => {
       this.setState({hasError: false});
       window.location.href = '/';
     }
@@ -24,7 +24,7 @@ class ErrorBoundary extends React.Component {
     render() {
       console.log('this.state', this.state)
       if (this.state.hasError) {
-        return <ErrorModal homePageRedirection={this.handleRedirection}/>
+        return <ErrorModal onClick={this.handleRedirect}/>
       }
   
       return this.props.children;
