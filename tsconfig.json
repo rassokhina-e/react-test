@@ -12,5 +12,5 @@
     ],
     "jsx": "preserve"
   },
-  "include": ["typings", "src"]
+  "include": ["src", "declarations.d.ts"]
 }

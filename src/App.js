@@ -9,6 +9,7 @@ import './App.scss';
 
 const HomePage = React.lazy(() => import('./pages/HomePage'));
 const Users = React.lazy(() => import('./pages/Users'));
+const Posts = React.lazy(() => import('./pages/Posts'));
 
 function App() {
   React.useCallback(() => onClick, [])
@@ -25,6 +26,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<HomePage onClick={onClick} />} />
                         <Route path="/users/*" element={<Users />}/>
+                        <Route path="/posts/*" element={<Posts />}/>
                     </Routes>
                 </React.Suspense>
             </Layout>
