@@ -24,7 +24,7 @@ class ErrorBoundary extends React.Component {
     render() {
       console.log('this.state', this.state)
       if (this.state.hasError) {
-        return <ErrorModal onClick={this.handleRedirect}/>
+        return <ErrorModal onClick={this.handleRedirect} />
       }
   
       return this.props.children;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import cn from 'classnames';
 
 import { useFetchPosts } from '../../../../hooks/useFetchPosts'
@@ -8,18 +9,16 @@ import styles from './styles.module.scss';
 
 const PostsPage = () => {
   const { posts, isLoading, errMesage } = useFetchPosts();
-  const [checkedPost, setCheckedPost] = React.useState(null);
+  const [selectedPost, setSelectedPost] = React.useState(null);
+  const navigate = useNavigate();
 
   const getPostClasses = (postId) => cn(styles.row, styles.borderGray, styles.py2, {
-    [styles.selected]: checkedPost === postId
+    [styles.selected]: selectedPost === postId
   });
 
   const handleClick = (event, postId) => {
-    if (event.target.checked) {
-        setCheckedPost(postId);
-    } else {
-        setCheckedPost(null);
-    }
+    setSelectedPost(postId);
+    navigate(`/posts/${postId}`, { replace: true });
   }
 
   if (!posts.length && !isLoading) {

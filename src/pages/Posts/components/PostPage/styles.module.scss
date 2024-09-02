@@ -1,0 +1,94 @@
+@import '../../../../css/colors.scss';
+
+.wrapper {
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    background-color: $util-gray-03;
+    cursor: pointer;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+.posttitle {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  color: $insight;
+  font-weight: 700;
+  letter-spacing: -.025em;
+  line-height: 24px;
+}
+
+.postbody {
+  width: 80%;
+  white-space: wrap;
+  color: $fog;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.feetbackBtn {
+  background-color: transparent;
+  border: 1px solid;
+  border-color: $frequency;
+  border-radius: 9999px;
+  font-family: ABCFavoritExtended;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: .3rem 1rem;
+  text-align: center;
+  color: $frequency;
+  cursor: pointer;
+  text-decoration: none;
+  width: 200px;
+
+  &:hover {
+    background-color: $util-gray-03;
+  }
+}
+
+.ml2 {
+  margin-left: 4px;
+}
+
+.py2 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.bgGray {
+  background-color: $util-gray-03;
+}
+
+.borderGray {
+  border-color: $util-gray-03;
+  border-bottom: 1px solid;
+}
+
+.selected {
+  background-color: $util-gray-02;
+}
