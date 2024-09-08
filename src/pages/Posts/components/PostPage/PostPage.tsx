@@ -15,8 +15,17 @@ type Props = {
   postId: string | number;
 }
 
+type User = {
+  email: string,
+  id: number,
+  name: string,
+  phone: number,
+  username: string,
+  website: string
+}
+
 const PostPage: React.FC<Props>= (props) => {
-  const [user, setUser] = React.useState();
+  const [user, setUser] = React.useState<User>();
 
   const { postId } = useParams()
   const { post, isLoading } = useFetchPost(postId ? postId : props.postId);

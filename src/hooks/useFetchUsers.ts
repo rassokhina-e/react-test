@@ -1,8 +1,23 @@
 import React from "react";
 import UserApi from '../api/users';
 
-export function useFetchUsers() {
-  const [users, setUsers] = React.useState([]);
+type User = {
+  email: string,
+  id: number,
+  name: string,
+  phone: number,
+  username: string,
+  website: string
+}
+
+type UsersReturnType = {
+  users: User[],
+  isLoading: boolean,
+  errMesage: string
+}
+
+export function useFetchUsers(): UsersReturnType {
+  const [users, setUsers] = React.useState<User[]>([]);
   const [isLoading, setLoader] = React.useState(false);
   const [errMesage, setErrorMessage] = React.useState('');
 

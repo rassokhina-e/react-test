@@ -1,29 +1,43 @@
 import React from 'react';
 import cn from 'classnames';
 
+import Checkbox from '@mui/material/Checkbox';
+
 import { useFetchUsers } from '../../../../hooks/useFetchUsers'
 import { Spinner } from '../../../../components/Spinner';
 
 import styles from './styles.module.scss';
 
+type User = {
+  email: string,
+  id: number,
+  name: string,
+  phone: number,
+  username: string,
+  website: string
+}
+
 const UsersPage = () => {
   const [submissionInProgress, setSubmissionInProgress] = React.useState(false);
   const text = submissionInProgress ? 'Processing': "Go to member's website";
 
-  const [checkedUsers, setCheckedUsers] = React.useState([]);
+  let defaultCheckedUsers: number[] = [];
+  const [checkedUsers, setCheckedUsers] = React.useState(defaultCheckedUsers);
 
   const { users, isLoading, errMesage } = useFetchUsers();
 
-  const getClasses = (isAdmin) => cn(styles.websiteBtn, {
+  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
+  const getClasses = (isAdmin: boolean) => cn(styles.websiteBtn, {
     inProgress: submissionInProgress,
     [styles.bgGray]: isAdmin
   });
 
-  const getUserClasses = (userId) => cn(styles.row, styles.borderGray, styles.py2, {
+  const getUserClasses = (userId: number) => cn(styles.row, styles.borderGray, styles.py2, {
     [styles.selected]: checkedUsers.includes(userId)
   });
 
-  const handleChange = (event, userId) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>, userId: number) => {
     if (event.target.checked) {
       setCheckedUsers([...checkedUsers, userId]);
     } else {
@@ -40,7 +54,7 @@ const UsersPage = () => {
       {errMesage && <div>{ errMesage }</div>}
       {isLoading && <Spinner />}
       <h1>Members</h1>
-      {users.map(user =>
+      {users.map((user: User) =>
         <div key={ user.id } className={getUserClasses(user.id)}>
           <div className={styles.column}>
             <div className={styles.username}>
@@ -50,7 +64,7 @@ const UsersPage = () => {
             <div className={styles.email}>{ user.email }</div>
           </div>
           <div className={styles.row}>
-            <input type="checkbox" checked={checkedUsers.includes(user.id)} onChange={e => handleChange(e, user.id)}></input>
+            <Checkbox className={styles.checkbox} checked={checkedUsers.includes(user.id)} onChange={e => handleChange(e, user.id)} {...label} />
             <div className={styles.ml2}>
               <a href={'https://www.' + user.website} target="_blank" rel="noreferrer" className={getClasses(user.id === 2)}>{ text }</a>
             </div>

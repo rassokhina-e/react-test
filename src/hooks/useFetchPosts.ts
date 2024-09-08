@@ -14,7 +14,7 @@ type PostsReturnType = {
     errMesage: string
 }
 
-export function useFetchPosts(): Promise<PostsReturnType> {
+export function useFetchPosts(): PostsReturnType {
   const [posts, setPosts] = React.useState<Post[]>([]);
   const [isLoading, setLoader] = React.useState(false);
   const [errMesage, setErrorMessage] = React.useState('');
