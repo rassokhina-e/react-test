@@ -1,8 +1,21 @@
 import React from "react";
 import UserApi from '../api/posts';
 
-export function useFetchPosts() {
-  const [posts, setPosts] = React.useState([]);
+type Post = {
+    body: string,
+    id: number,
+    title: string,
+    userId: number
+}
+
+type PostsReturnType = {
+    posts: Post[],
+    isLoading: boolean,
+    errMesage: string
+}
+
+export function useFetchPosts(): Promise<PostsReturnType> {
+  const [posts, setPosts] = React.useState<Post[]>([]);
   const [isLoading, setLoader] = React.useState(false);
   const [errMesage, setErrorMessage] = React.useState('');
 
@@ -28,8 +41,8 @@ export function useFetchPosts() {
 
 }
 
-export function useFetchPost(postId) {
-    const [post, setPost] = React.useState();
+export function useFetchPost(postId: string | number) {
+    const [post, setPost] = React.useState<Post>();
     const [isLoading, setLoader] = React.useState(false);
     const [errMesage, setErrorMessage] = React.useState('');
   
@@ -37,7 +50,7 @@ export function useFetchPost(postId) {
       fetchPost(postId);
     }, [postId]);
   
-    const fetchPost = async (postId) => {
+    const fetchPost = async (postId: string | number) => {
       setLoader(true)
       try {
         const response = await UserApi.getPost(postId);

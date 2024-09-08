@@ -25,7 +25,7 @@ export function useFetchUsers() {
   }
 
   const filteredUsers = React.useMemo(() => {
-    return users.filter((user) => user.id > 1)
+    return users.filter((user) => user.id > 0)
   }, [users])
 
   return { users: filteredUsers, isLoading, errMesage }
