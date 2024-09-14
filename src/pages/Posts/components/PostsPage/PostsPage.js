@@ -37,7 +37,7 @@ const PostsPage = () => {
             <div className={styles.postbody}>{ post.body }</div>
           </div>
           <div className={styles.row}>
-            <a className={styles.feetbackBtn} href={'mailto:' + post.email}>Send a feetback</a>
+            <a className={styles.feedbackBtn} href={'mailto:' + post.email}>Send a feedback</a>
           </div>
         </div>
       )}

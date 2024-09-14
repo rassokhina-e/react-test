@@ -1,5 +1,5 @@
 import React from "react";
-import UserApi from '../api/posts';
+import PostApi from '../api/posts';
 
 type Post = {
     body: string,
@@ -26,7 +26,7 @@ export function useFetchPosts(): PostsReturnType {
   const fetchPosts = async () => {
     setLoader(true)
     try {
-      const response = await UserApi.getPosts();
+      const response = await PostApi.getPosts();
       if (response) {
         setPosts(response);
       }
@@ -53,7 +53,7 @@ export function useFetchPost(postId: string | number) {
     const fetchPost = async (postId: string | number) => {
       setLoader(true)
       try {
-        const response = await UserApi.getPost(postId);
+        const response = await PostApi.getPost(postId);
         if (response) {
           setPost(response);
         }

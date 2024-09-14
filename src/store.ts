@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-import feetbackCounterReducer from '../src/pages/Posts/components/PostPage/feetbackCounter'
+import counterReducer from '../src/pages/Posts/components/PostPage/postState'
+import userReducer from '../src/pages/Users/components/UsersPage/userState'
 
 export const store = configureStore({
   reducer: {
-    feetbackCounter: feetbackCounterReducer,
+    counterReducer,
+    userReducer,
   },
 })
 

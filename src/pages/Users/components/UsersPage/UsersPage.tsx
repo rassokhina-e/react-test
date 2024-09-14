@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import cn from 'classnames';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../../../store';
+import { changeUserName } from './userState'
 
 import Checkbox from '@mui/material/Checkbox';
 
@@ -27,6 +30,15 @@ const UsersPage = () => {
   const { users, isLoading, errMesage } = useFetchUsers();
 
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
+  const user = useSelector((state: RootState) => state.userReducer.user)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(changeUserName('Zhenya'))
+    console.log('user', user)
+  }, [])
 
   const getClasses = (isAdmin: boolean) => cn(styles.websiteBtn, {
     inProgress: submissionInProgress,
