@@ -39,13 +39,13 @@ const ArticleContext = React.createContext<Comment[]>([]);
 const PostPage: React.FC<Props>= (props) => {
   const [user, setUser] = React.useState<User>();
 
-  const [selectedCommentId, setComment] = React.useState<number|null>(null);
+  const [selectedCommentId, setSelectedComment] = React.useState<number|null>(null);
 
   const { postId } = useParams()
   const { post, isLoading } = useFetchPost(postId ? postId : props.postId);
   const { users } = useFetchUsers();
   const { comments } = useFetchPostComments(postId ? postId : props.postId);
-  const [filteredComments, setComments] = React.useState<Comment[]>([]);
+  const [filteredComments, setComment] = React.useState<Comment[]>([]);
 
   const dispatch = useDispatch();
   const feedbackCounter = useSelector((state: RootState) => state.counterReducer.value)
@@ -66,8 +66,8 @@ const PostPage: React.FC<Props>= (props) => {
   const getTopCommentClasses = (commentId: number) => cn(styles.row, styles.borderGray, styles.py2);
 
   const handleClick = (commentId: number) => {
-    setComment(commentId)
-    setComments(comments.filter(comment => comment.id === commentId))
+    setSelectedComment(commentId)
+    setComment(comments.filter(comment => comment.id === commentId))
   }
 
   if (isLoading) {
